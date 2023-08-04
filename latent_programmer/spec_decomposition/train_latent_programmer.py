@@ -59,6 +59,11 @@ flags.DEFINE_integer('num_layers', 3, 'Number of Transformer heads.')
 flags.DEFINE_boolean('slow_decode', True, 'Use slow decoding for prediction?')
 flags.DEFINE_float('dropout_rate', 0.1, 'Dropout rate')
 flags.DEFINE_float('attention_dropout_rate', 0.1, 'Attention dropout rate')
+flags.DEFINE_integer('latent_vocab_size', 40, 'Number of latent tokens.')
+flags.DEFINE_integer('c', 2, 'Latent length reduced by factor of 2^c.')
+flags.DEFINE_float('commitment_cost_vq', 0.25, 'Weight for VQ-VAE loss.')
+flags.DEFINE_integer('latent_beam_size', 3, 'Number of latent beams.')
+
 
 flags.DEFINE_string('dataset_dir', None,
                     'Directory to find TFRecord datasets for train and test.')
